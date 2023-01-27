@@ -1,22 +1,19 @@
 <template>
-  <div id="app">
+  <div id="index">
     <img alt="Vue logo" src="./assets/logo.png">
-    <router-view></router-view>
-    <div id="app">
-
+    <div id="index">
     <el-button @click="visible = true">Button</el-button>
-    <el-button @click="jump" type="success">跳转</el-button>
+
     <el-dialog :visible.sync="visible" title="Hello world">
       <p>Try Element</p>
     </el-dialog>
-
   </div>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from '/src/components/HelloWorld'
 
 export default {
   name: 'App',
@@ -28,15 +25,12 @@ export default {
         return { visible: false }
       },
   methods:{
-    jump(){
-      this.$router.push("/diagnosis")
-    }
   }
 }
 </script>
 
 <style>
-#app {
+#index {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
