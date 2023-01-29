@@ -1,6 +1,6 @@
 <template>
 <div style="width: 60%; margin: 0px auto">
-      <el-card class="box-card">
+      <el-card class="box-card" >
         <div slot="header" class="clearfix" style="text-align: center">
     <span style="color: black;
                     font-size: 30px;
@@ -9,8 +9,8 @@
                     基本信息
                 </span>
         </div>
-        <el-form ref="form" :model="form" label-width="80px">
-          <el-form-item label="姓名">
+        <el-form ref="form" :model="form" label-width="80px" style="text-align: center">
+          <el-form-item label="姓名" >
             <el-input v-model="form.name" style="width: 20%" size="small"></el-input>
           </el-form-item>
           <el-form-item label="性别">

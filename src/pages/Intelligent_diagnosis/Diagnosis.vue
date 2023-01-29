@@ -1,21 +1,21 @@
 <template>
   <div class="q-pa-md row">
     <el-container>
+
       <el-aside width="200px">
         <divider/>
       </el-aside>
-      <el-container>
-        <el-divider><i class="el-icon-mobile-phone"></i></el-divider>
+
+      <el-container >
+        <el-divider><i class="el-icon-s-custom"></i></el-divider>
         <!--    基本信息模块-->
-        <el-headerel-header>
           <basicInform></basicInform>
-        </el-headerel-header>
         <!--    症状描述和图片上传模块-->
-        <el-divider><i class="el-icon-mobile-phone"></i></el-divider>
-        <el-main :visible.sync="dialogVisible">
+        <el-divider><i class="el-icon-s-order"></i></el-divider>
+
           <symptomDescription></symptomDescription>
-        </el-main>
-        <el-divider><i class="el-icon-mobile-phone"></i></el-divider>
+
+        <el-divider><i class="el-icon-camera-solid"></i></el-divider>
         <el-footer>
           <uploadImage></uploadImage>
         </el-footer>
@@ -103,6 +103,9 @@ export default {
       dialogVisible: false
     }
   },
+  created() {
+    this.$root.$on('result', this.startup)
+  },
   methods: {
     clear() {
       this.form.desc = ""
@@ -131,16 +134,6 @@ export default {
 }
 </script>
 <style scoped>
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: "";
-}
-
-.clearfix:after {
-  clear: both
-}
-
 .text {
   font-size: 16px;
 }
@@ -155,22 +148,22 @@ export default {
 }
 
 .el-aside {
-  color: #333;
-  text-align: center;
-  line-height: 200px;
+  line-height: 400px;
 }
 
 .el-main {
-  color: #333;
   text-align: center;
-}
-
-.el-aside {
-  line-height: 320px;
+  line-height: 100px;
+  margin-bottom: 100px;
 }
 
 body > .el-container {
   margin-bottom: 40px;
+}
+
+
+.el-container:nth-child(7) .el-aside {
+  line-height: 320px;
 }
 
 </style>
