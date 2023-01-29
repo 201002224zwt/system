@@ -2,7 +2,7 @@ import Vue from 'vue'
 //对应你要跳转的组件
 import HelloWorld from "../components/HelloWorld"
 import Router from 'vue-router'
-import Diagnosis from "@/pages/Intelligent_diagnosis/components/Diagnosis"
+import Diagnosis from "@/pages/Intelligent_diagnosis/Diagnosis"
 import DiagnosticResult from "@/pages/Intelligent_diagnosis/components/Result"
 
 Vue.use(Router);
