@@ -1,15 +1,19 @@
 <template>
   <div class="diagnosis">
-    <divider/>
-    <el-divider><i class="el-icon-s-custom"></i></el-divider>
+    <divider></divider>
+    <div style="width: 45%;margin:auto">
+      <el-divider><i class="el-icon-s-custom"></i></el-divider>
+    </div>
     <!--    基本信息模块-->
     <basicInform></basicInform>
     <!--    症状描述和图片上传模块-->
-    <el-divider><i class="el-icon-s-order"></i></el-divider>
-
+    <div style="width: 45%;margin:auto">
+      <el-divider><i class="el-icon-s-order"></i></el-divider>
+    </div>
     <symptomDescription></symptomDescription>
-
-    <el-divider><i class="el-icon-camera-solid"></i></el-divider>
+    <div style="width: 45%;margin:auto">
+      <el-divider><i class="el-icon-camera-solid"></i></el-divider>
+    </div>
     <uploadImage></uploadImage>
     <el-dialog
         :visible.sync="dialogVisible"
@@ -47,7 +51,7 @@
       </el-card>
       <div style="margin-bottom: 20px"></div>
       <el-card class="box-card">
-         <div slot="header" class="clearfix">
+        <div slot="header" class="clearfix">
           <span style="font-size: 20px">请对本次诊断评分</span>
         </div>
         <el-rate
@@ -78,7 +82,7 @@ export default {
     basicInform,
     symptomDescription,
     divider,
-    uploadImage
+    uploadImage,
   },
   data() {
     return {
