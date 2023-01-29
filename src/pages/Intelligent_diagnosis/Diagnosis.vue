@@ -1,26 +1,16 @@
 <template>
-  <div class="q-pa-md row">
-    <el-container>
+  <div class="diagnosis">
+    <divider/>
+    <el-divider><i class="el-icon-s-custom"></i></el-divider>
+    <!--    基本信息模块-->
+    <basicInform></basicInform>
+    <!--    症状描述和图片上传模块-->
+    <el-divider><i class="el-icon-s-order"></i></el-divider>
 
-      <el-aside width="200px">
-        <divider/>
-      </el-aside>
+    <symptomDescription></symptomDescription>
 
-      <el-container >
-        <el-divider><i class="el-icon-s-custom"></i></el-divider>
-        <!--    基本信息模块-->
-          <basicInform></basicInform>
-        <!--    症状描述和图片上传模块-->
-        <el-divider><i class="el-icon-s-order"></i></el-divider>
-
-          <symptomDescription></symptomDescription>
-
-        <el-divider><i class="el-icon-camera-solid"></i></el-divider>
-        <el-footer>
-          <uploadImage></uploadImage>
-        </el-footer>
-      </el-container>
-    </el-container>
+    <el-divider><i class="el-icon-camera-solid"></i></el-divider>
+    <uploadImage></uploadImage>
     <el-dialog
         :visible.sync="dialogVisible"
         width="30%"
@@ -55,6 +45,16 @@
           {{ '药物' + (index + 1) + "\t" + item }}
         </div>
       </el-card>
+      <div style="margin-bottom: 20px"></div>
+      <el-card class="box-card">
+         <div slot="header" class="clearfix">
+          <span style="font-size: 20px">请对本次诊断评分</span>
+        </div>
+        <el-rate
+            v-model="value"
+            show-text>
+        </el-rate>
+      </el-card>
       <span slot="footer" class="dialog-footer">
     <el-button @click="dialogVisible = false">取 消</el-button>
     <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
@@ -83,6 +83,7 @@ export default {
   data() {
     return {
       symptom: "",
+      value: null,
       result: [//分析出来的病及其对应的分析
         {illness: "风寒", analysis: "吹空调"},
         {illness: "发热", analysis: "阳了"},
@@ -140,30 +141,6 @@ export default {
 
 .item {
   margin-bottom: 18px;
-}
-
-.el-header, .el-footer {
-  color: #333;
-  line-height: 60px;
-}
-
-.el-aside {
-  line-height: 400px;
-}
-
-.el-main {
-  text-align: center;
-  line-height: 100px;
-  margin-bottom: 100px;
-}
-
-body > .el-container {
-  margin-bottom: 40px;
-}
-
-
-.el-container:nth-child(7) .el-aside {
-  line-height: 320px;
 }
 
 </style>
